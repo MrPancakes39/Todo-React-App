@@ -20,7 +20,7 @@ function TodoContainer() {
       </div>
       <div className="form-group">
         <p>You have {todos.length} pending tasks</p>
-        <button type="button" id="clear">
+        <button type="button" id="clear" onClick={() => setTodos([])}>
           Clear All
         </button>
       </div>

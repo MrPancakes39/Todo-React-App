@@ -27,6 +27,7 @@ body {
 }
 
 .todo-container {
+  --btn-size: 4rem;
   width: 600px;
   height: 400px;
   padding: 2rem;
@@ -41,10 +42,11 @@ body {
   font-weight: bold;
 }
 
-.todo-container .form-group {
+.todo-container :is(.form-group, .todo-item) {
   width: 100%;
   display: flex;
   gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .form-group input {
@@ -63,9 +65,8 @@ body {
 .form-group button {
   margin: 0;
   padding: 0;
-  --size: 4rem;
-  width: var(--size);
-  height: var(--size);
+  width: var(--btn-size);
+  height: var(--btn-size);
   color: #fff;
   font-size: 3rem;
   font-weight: bold;
@@ -95,4 +96,35 @@ body {
   width: fit-content;
   height: auto;
   padding-inline: 1rem;
+}
+
+.todo-item {
+  background-color: #e4e4e4;
+  border-radius: 5px;
+  margin-block-end: 1rem;
+  align-items: center;
+}
+
+.todo-item .text {
+  margin: 0;
+  text-align: start;
+  padding-inline: 1rem;
+  flex-grow: 1;
+}
+
+.todo-item button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: #d94a3a;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.75rem;
+  width: var(--btn-size);
+}
+
+.todo-item button:is(:hover, :focus) {
+  background-color: hsl(6, 68%, 50%);
 }

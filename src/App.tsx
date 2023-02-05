@@ -18,6 +18,12 @@ function TodoContainer() {
           <Todo key={i} todo={val} />
         ))}
       </div>
+      <div className="form-group">
+        <p>You have {todos.length} pending tasks</p>
+        <button type="button" id="clear">
+          Clear All
+        </button>
+      </div>
     </form>
   );
 }

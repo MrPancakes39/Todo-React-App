@@ -77,3 +77,21 @@ body {
 .form-group button:is(:hover, :focus) {
   background-color: hsl(265, 66%, 52%);
 }
+
+.todo-container .todos {
+  flex-grow: 1;
+  margin-bottom: 1rem;
+  overflow: auto;
+}
+
+.form-group p {
+  margin: 0;
+  flex-grow: 1;
+}
+
+.form-group #clear {
+  font-size: 1rem;
+  width: fit-content;
+  height: auto;
+  padding-inline: 1rem;
+}

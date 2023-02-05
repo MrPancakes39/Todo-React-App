@@ -11,6 +11,7 @@ body {
 }
 
 .background {
+  z-index: -1;
   position: fixed;
   inset: 0;
   background: linear-gradient(180deg, rgba(100, 218, 196, 1) 0%, rgba(70, 120, 216, 1) 100%);

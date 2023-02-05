@@ -37,6 +37,10 @@ body {
   align-items: center;
 }
 
+.todo-container .title {
+  font-weight: bold;
+}
+
 .todo-container .form-group {
   width: 100%;
   display: flex;

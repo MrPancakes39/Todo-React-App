@@ -82,6 +82,7 @@ body {
   flex-grow: 1;
   margin-bottom: 1rem;
   overflow: auto;
+  width: 100%;
 }
 
 .form-group p {

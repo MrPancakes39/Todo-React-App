@@ -6,15 +6,22 @@ type TodoItem = { text: string; key: number };
 
 function TodoContainer() {
   let [todos, setTodos] = useState<TodoItem[]>([]);
-  let [item, setItem] = useState<string>("");
   return (
     <form className="todo-container">
       <h4 className="title">Cool Todo App</h4>
       <div className="form-group">
-        <input placeholder="Add a todo item" id="todo_input" onChange={(e) => setItem(e.target.value)} />
+        <input placeholder="Add a todo item" id="todo_input" />
         <button
           type="button"
-          onClick={() => setTodos([...todos, { text: item, key: (todos.slice(-1)[0]?.key ?? 0) + 1 }])}
+          onClick={() => {
+            const input = document.querySelector<HTMLInputElement>("#todo_input");
+            const item = input?.value || "";
+            if (item === "") alert("Can't add empty item.");
+            else {
+              setTodos([...todos, { text: item, key: (todos.slice(-1)[0]?.key ?? 0) + 1 }]);
+              (input as HTMLInputElement).value = "";
+            }
+          }}
         >
           +
         </button>

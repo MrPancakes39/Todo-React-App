@@ -2,9 +2,12 @@ import "./App.css";
 
 function TodoContainer() {
   return (
-    <div className="todo-container">
-      <p>Hi</p>
-    </div>
+    <form className="todo-container">
+      <div className="form-group">
+        <input placeholder="Add a todo item" />
+        <button type="button">+</button>
+      </div>
+    </form>
   );
 }
 

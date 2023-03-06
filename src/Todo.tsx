@@ -5,9 +5,11 @@ type TodoProps = {
 
 function Todo({ todo, onClick }: TodoProps) {
   return (
-    <div className="todo-item" onClick={onClick}>
+    <div className="todo-item">
       <p className="text">{todo}</p>
-      <button type="button">x</button>
+      <button type="button" onClick={onClick}>
+        x
+      </button>
     </div>
   );
 }

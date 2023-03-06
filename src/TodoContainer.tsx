@@ -20,6 +20,10 @@ function TodoContainer() {
     }
   }
 
+  function removeTodoItem(item: TodoItem) {
+    setTodos(todos.filter((todo) => todo.key !== item.key));
+  }
+
   return (
     <form className="todo-container">
       <h4 className="title">Cool Todo App</h4>
@@ -31,11 +35,7 @@ function TodoContainer() {
       </div>
       <div className="todos">
         {todos.map((item) => (
-          <Todo
-            key={item.key}
-            todo={item.text}
-            onClick={() => setTodos(todos.filter((todo) => todo.key !== item.key))}
-          />
+          <Todo key={item.key} todo={item.text} onClick={() => removeTodoItem(item)} />
         ))}
       </div>
       <div className="form-group">

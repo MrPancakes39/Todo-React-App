@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./App.css";
 import Todo from "./Todo";
 
@@ -6,20 +6,22 @@ type TodoItem = { text: string; key: number };
 
 function TodoContainer() {
   let [todos, setTodos] = useState<TodoItem[]>([]);
+  let inputRef = useRef<HTMLInputElement>(null);
+
   return (
     <form className="todo-container">
       <h4 className="title">Cool Todo App</h4>
       <div className="form-group">
-        <input placeholder="Add a todo item" id="todo_input" />
+        <input placeholder="Add a todo item" id="todo_input" ref={inputRef} />
         <button
           type="button"
           onClick={() => {
-            const input = document.querySelector<HTMLInputElement>("#todo_input");
-            const item = input?.value || "";
+            const elt = inputRef.current as HTMLInputElement;
+            const item = elt.value;
             if (item === "") alert("Can't add empty item.");
             else {
               setTodos([...todos, { text: item, key: (todos.slice(-1)[0]?.key ?? 0) + 1 }]);
-              (input as HTMLInputElement).value = "";
+              elt.value = "";
             }
           }}
         >

@@ -24,7 +24,13 @@ function TodoContainer() {
   }
 
   return (
-    <form className="todo-container">
+    <form
+      className="todo-container"
+      onSubmit={(e) => {
+        e.preventDefault();
+        addToList();
+      }}
+    >
       <h4 className="title">Cool Todo App</h4>
       <div className="form-group">
         <input placeholder="Add a todo item" id="todo_input" ref={inputRef} />

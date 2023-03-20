@@ -11,12 +11,11 @@ function TodoContainer() {
   let inputRef = useRef<HTMLInputElement>(null);
 
   function addToList() {
-    const elt = inputRef.current as HTMLInputElement;
-    const item = elt.value;
+    const item = inputRef.current!.value;
     if (item === "") alert("Can't add empty item.");
     else {
       setTodos([...todos, { text: item, key: (todos.slice(-1)[0]?.key ?? 0) + 1 }]);
-      elt.value = "";
+      inputRef.current!.value = "";
     }
   }
 

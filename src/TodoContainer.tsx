@@ -34,7 +34,7 @@ function TodoContainer() {
       </div>
       <div className="todos">
         {todos.map((item) => (
-          <Todo key={item.key} todo={item.text} onClick={() => removeTodoItem(item)} />
+          <Todo key={item.key} todo={item.text} remove={() => removeTodoItem(item)} />
         ))}
       </div>
       <div className="form-group">

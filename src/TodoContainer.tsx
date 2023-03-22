@@ -14,7 +14,7 @@ function TodoContainer() {
     const item = inputRef.current!.value;
     if (item === "") alert("Can't add empty item.");
     else {
-      setTodos([...todos, { text: item, key: (todos.slice(-1)[0]?.key ?? 0) + 1 }]);
+      setTodos([...todos, { text: item, key: (todos.at(-1)?.key ?? 0) + 1 }]);
       inputRef.current!.value = "";
     }
   }
